@@ -1,0 +1,15 @@
+# Deploy zips
+*.zip
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Temp files from zip operations
+zie7wrJm
+zipzWFSz
+
+# Editor
+.vscode/
+.idea/
