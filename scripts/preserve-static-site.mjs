@@ -8,6 +8,7 @@ const preservedDirectories = [
   'about',
   'css',
   'facilities',
+  'images',
   'js',
   'music-teacher-jobs-cincinnati',
   'teaching-opportunities',

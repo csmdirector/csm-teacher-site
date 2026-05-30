@@ -760,6 +760,12 @@ opacity: 0.75;
 margin-bottom: 0.85rem;
 }
 
+.footer-brand img.footer-logo {
+width: min(240px, 100%);
+height: auto;
+opacity: 1;
+}
+
 .footer-brand p { font-size: 0.85rem; line-height: 1.6; max-width: 240px; }
 
 .footer-col h5 {
