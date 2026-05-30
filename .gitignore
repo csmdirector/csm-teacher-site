@@ -13,3 +13,8 @@ zipzWFSz
 # Editor
 .vscode/
 .idea/
+
+# Node / Astro
+node_modules/
+dist/
+.astro/

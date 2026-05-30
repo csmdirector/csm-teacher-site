@@ -1,0 +1,25 @@
+---
+import TeacherBase from './TeacherBase.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+  visibility?: 'public' | 'internal' | 'private';
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonicalPath,
+  visibility = 'internal',
+  noindex = true
+} = Astro.props;
+---
+
+<TeacherBase title={title} description={description} canonicalPath={canonicalPath} noindex={noindex || visibility !== 'public'}>
+  <article class="resource-page" data-visibility={visibility}>
+    <slot />
+  </article>
+</TeacherBase>

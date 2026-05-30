@@ -1,0 +1,27 @@
+---
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/why-csm/', label: 'Why CSM' },
+  { href: '/teaching-opportunities/', label: 'Teaching Opportunities' },
+  { href: '/facilities/', label: 'Facilities' },
+  { href: '/about/', label: 'About' }
+];
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="site-logo" aria-label="Cincinnati School of Music Teacher Site Home">
+      <img src="https://cincinnatischoolofmusic.com/images/csm-logo.png" alt="Cincinnati School of Music" width="140" height="42" />
+    </a>
+    <nav aria-label="Primary navigation">
+      <ul class="site-nav">
+        {navItems.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+        <li class="nav-cta">
+          <a href="https://ats.rippling.com/cincinnati-school-of-music/jobs">Apply</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
