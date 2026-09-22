@@ -40,6 +40,6 @@ const canonicalUrl = new URL(canonicalPath, Astro.site).toString();
       <slot />
     </main>
     <TeacherFooter />
-    <script src="/js/nav.js"></script>
+    <script is:inline src="/js/nav.js"></script>
   </body>
 </html>
