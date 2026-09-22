@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import TeacherBase from '../../layouts/TeacherBase.astro';
+
+const articles = (await getCollection('teacher-resources', ({ data }) =>
+  data.status === 'published' && data.visibility === 'public'
+)).sort((a, b) => (b.data.publishDate?.valueOf() || 0) - (a.data.publishDate?.valueOf() || 0));
+---
+<TeacherBase title="Teacher Blog | Cincinnati School of Music" description="Practical ideas for music teachers, with student understanding, confidence, and enjoyment at the heart of each lesson." canonicalPath="/resources/" noindex={false}>
+  <section>
+    <div class="container-sm">
+      <span class="section-label">Teacher Blog</span>
+      <h1>Ideas for the lessons we teach.</h1>
+      <p class="intro">Thoughtful, practical ways to help students feel understood, enjoy their music, and keep learning.</p>
+      <div class="articles">
+        {articles.map((article) => (
+          <article class="article-card">
+            <h2><a href={`/resources/${article.id}/`}>{article.data.title}</a></h2>
+            <p>{article.data.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</TeacherBase>
+<style>
+  h1{margin-bottom:1.2rem}
+  .intro{margin-bottom:2.5rem}
+  .article-card{padding:2rem;background:var(--white);border:1px solid var(--offwb);border-radius:var(--radius);margin-bottom:1rem}
+  .article-card h2{font-size:1.5rem;margin-bottom:1rem}
+  .article-card a{color:var(--charcoal)}
+  .article-card a:hover{text-decoration:underline}
+</style>

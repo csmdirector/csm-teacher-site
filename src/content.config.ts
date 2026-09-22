@@ -32,6 +32,7 @@ const teacherResources = defineCollection({
     categories: z.array(z.string()).default([]),
     tags: z.array(z.string()).default([]),
     audience: z.array(z.string()).default(['Teachers']),
+    publishDate: z.date().optional(),
     lastUpdated: z.date().optional(),
     related: z.array(z.string()).default([]),
     ...seoFields
